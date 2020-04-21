@@ -4,7 +4,7 @@ const githubApi = {
   stargazers: '/repos/:owner/:repo/stargazers',
   repos: '/users/:user/repos',
   stargazers_url: '/repos/:user/:repos/stargazers',
-  imageRandom: 'https://cn.bing.com/HPImageArchive.aspx'
+  imageRandom: 'https://source.unsplash.com/random'
 }
 const api = {...githubApi}
 Object.keys(githubApi).forEach(key => {

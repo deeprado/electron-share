@@ -1,16 +1,48 @@
 <template>
   <div>
-    <h1>Home</h1>
-    <router-link :to="{name: 'index'}">后退</router-link>
+    <Layout>
+      <Header>
+        <router-link :to="{ name: 'index' }">返回</router-link>
+      </Header>
+      <Content>
+        <webview
+          id="star"
+          class="cheat-webview"
+          src="https://github.com/deeprado"
+        ></webview>
+      </Content>
+    </Layout>
   </div>
 </template>
 
 <script>
+  export default {
+    mounted () {
+      onload = () => {
+        const webview = document.getElementById('star')
+        const indicator = document.querySelector('.indicator')
 
-  //ui 地址 https://codepen.io/choogoor/pen/YWBxAg
-  export default {}
+        const loadstart = () => {
+          this.$loading()
+        }
+
+        const loadstop = () => {
+          this.$close()
+        }
+
+        webview.addEventListener('did-start-loading', loadstart)
+        webview.addEventListener('did-stop-loading', loadstop)
+      }
+      onload()
+    }
+  }
 </script>
 
-<style scoped>
-
+<style lang="less">
+  .cheat {
+    &-webview {
+      width: 100vw;
+      height: 100vh;
+    }
+  }
 </style>

@@ -4,13 +4,18 @@
       <input v-model="user" type="text" placeholder="请输入你的github用户ID">
       <div class="search"></div>
     </div>
-    <img :src="src" class="search-page__bg">
+    <img :src="bgPng" class="search-page__bg">
   </section>
 </template>
 
 <script>
 export default {
   name: "index",
+  data() {
+    return {
+      bgPng: require('../../assets/bg.jpg'),
+    }
+  },
   computed: {
     user: {
       get() {

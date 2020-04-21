@@ -22,14 +22,17 @@ http.interceptors.response.use(
     return response
   },
   err => {
-    const {status} = err.response
+    console.log('err', err)
+    const {response} = err
     Vue.close()
-    if (status === 401) {
-      Vue.prototype.$Message.error('对不起,您没有权限访问！')
-      Vue.prototype.$router.push('/')
-    }
-    if (status === 500) {
-      Vue.prototype.$Message.error('系统错误,请联系管理员！')
+    if (response.status) {
+      if (response.status === 401) {
+        Vue.prototype.$Message.error('对不起,您没有权限访问！')
+        Vue.prototype.$router.push('/')
+      }
+      if (response.status === 500) {
+        Vue.prototype.$Message.error('系统错误,请联系管理员！')
+      }
     }
     return Promise.reject(err)
   })
