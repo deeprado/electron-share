@@ -1,5 +1,7 @@
 # electron-share
 
+抄袭和借鉴 ![electron-share](https://github.com/HuaRongSAO/electron-share)
+
 > 基于 electron-vue 的桌面应用打包应用
 
 ## 应用截图
