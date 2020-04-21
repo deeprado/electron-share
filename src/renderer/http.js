@@ -8,7 +8,7 @@ const http = axios.create({timeout: 5000})
 http.interceptors.request.use(
   config => {
     const {path, url} = config
-    config.url = url.replace(/\:([a-zA-Z0-9]{1,})(\/|\b$)/mg,
+    config.url = url.replace(/:([a-zA-Z0-9]{1,})(\/|\b$)/mg,
       (...argus) => (`${path[argus[1]]}${argus[2]}`))
     return config
   },

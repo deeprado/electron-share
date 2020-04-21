@@ -10,44 +10,44 @@
 
 <script>
 export default {
-  name: "index",
-  data() {
+  name: 'index',
+  data () {
     return {
-      bgPng: require('../../assets/bg.jpg'),
+      bgPng: require('../../assets/bg.jpg')
     }
   },
   computed: {
     user: {
-      get() {
-        return this.$store.getters.user;
+      get () {
+        return this.$store.getters.user
       },
-      set(val) {
-        this.$store.dispatch("changeUser", val);
+      set (val) {
+        this.$store.dispatch('changeUser', val)
       }
     }
   },
   methods: {
-    async getBgImage() {
-      const httpParams = {
-        url: "https://img.xjh.me/random_img.php",
-        query: { return: "json" }
-      };
-      const {data} = this.$http(httpParams);
+    async getBgImage () {
+      // const httpParams = {
+      //   url: 'https://img.xjh.me/random_img.php',
+      //   query: { return: 'json' }
+      // }
+      // const {data} = this.$http(httpParams)
     },
-    async searchHandler() {
-      if (this.user === "") {
-        this.$Message.error("github用户ID不能为空！");
-        return;
+    async searchHandler () {
+      if (this.user === '') {
+        this.$Message.error('github用户ID不能为空！')
+        return
       }
-      await this.$store.dispatch("getGithubInfo").catch(err => {
-        this.$Message.error(err.message);
-        this.$Message.error("出现了错误，请检查你的输入是否正确");
-        throw err;
-      });
-      this.$router.push({ name: "index" });
+      await this.$store.dispatch('getGithubInfo').catch(err => {
+        this.$Message.error(err.message)
+        this.$Message.error('出现了错误，请检查你的输入是否正确')
+        throw err
+      })
+      this.$router.push({ name: 'index' })
     }
   }
-};
+}
 </script>
 <style lang="less">
 .search-page {

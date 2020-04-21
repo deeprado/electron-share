@@ -35,20 +35,20 @@
 <script>
 export default {
   name: 'index',
-  data() {
+  data () {
     return {
       avatarPng: require('@/assets/avatar.png'),
-      defaultImg: 'this.src="' + require('@/assets/avatar.png') + '"',
+      defaultImg: 'this.src="' + require('@/assets/avatar.png') + '"'
     }
   },
   methods: {
-    open(link) {},
+    open (link) {}
   },
   computed: {
-    github() {
+    github () {
       return this.$store.getters.github
-    },
-  },
+    }
+  }
 }
 </script>
 

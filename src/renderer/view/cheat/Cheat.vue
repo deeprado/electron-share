@@ -19,10 +19,10 @@
 
 <script>
 export default {
-  mounted() {
+  mounted () {
     onload = () => {
       const webview = document.getElementById('star')
-      const indicator = document.querySelector('.indicator')
+      // const indicator = document.querySelector('.indicator')
 
       const loadstart = () => {
         this.$loading()
@@ -36,7 +36,7 @@ export default {
       webview.addEventListener('did-stop-loading', loadstop)
     }
     onload()
-  },
+  }
 }
 </script>
 

@@ -6,56 +6,56 @@ const state = {
   loading: false,
   user: 'deeprado',
   bgImages: [],
-  github: {},
+  github: {}
 }
 const getters = {
   loading: (state) => state.loading,
   user: (state) => state.user,
-  github: (state) => state.github,
+  github: (state) => state.github
 }
 const mutations = {
-  SET_LOADING(state, loading) {
+  SET_LOADING (state, loading) {
     state.loading = loading
   },
-  SET_IMAGES(state, payload) {
+  SET_IMAGES (state, payload) {
     state.bgImages = payload
   },
-  SET_USER(state, user) {
+  SET_USER (state, user) {
     state.user = user
   },
-  SET_GITHUB(state, github) {
+  SET_GITHUB (state, github) {
     state.github = github
-  },
+  }
 }
 const actions = {
-  loading({ commit }) {
+  loading ({ commit }) {
     commit('SET_LOADING', true)
   },
-  close({ commit }) {
+  close ({ commit }) {
     commit('SET_LOADING', false)
   },
-  async randomImg({ commit }, needImageNum) {
+  async randomImg ({ commit }, needImageNum) {
     const paramsRequest = {
       url: Vue.api.imageRandom,
       method: 'get',
-      query: { format: 'js', idx: 0, n: 10 },
+      query: { format: 'js', idx: 0, n: 10 }
     }
     const { data } = await Vue.http(paramsRequest)
     commit('SET_IMAGES', data)
   },
-  changeUser({ commit }, user) {
+  changeUser ({ commit }, user) {
     commit('SET_USER', user)
   },
-  async getGithubInfo({ commit, getters }) {
+  async getGithubInfo ({ commit, getters }) {
     const { user } = getters
     const httpParams = {
       url: Vue.api.users,
       path: { user },
-      method: 'get',
+      method: 'get'
     }
     const { data } = await Vue.http(httpParams)
     commit('SET_GITHUB', data)
-  },
+  }
 }
 
 export default new Vuex.Store({
@@ -63,5 +63,5 @@ export default new Vuex.Store({
   getters,
   mutations,
   actions,
-  strict: process.env.NODE_ENV !== 'production',
+  strict: process.env.NODE_ENV !== 'production'
 })

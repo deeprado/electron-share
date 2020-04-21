@@ -22,7 +22,7 @@ let defaultWorkAreaSize = {
   height: 716
 }
 
-  /**
+/**
  * 获取桌面可用大小
  */
 function workAreaSize () {
@@ -59,11 +59,10 @@ function workAreaSize () {
 }
 
 function createWindow () {
-
   const {
     width,
     height
-  } = workAreaSize();
+  } = workAreaSize()
 
   /**
    * Initial window options
