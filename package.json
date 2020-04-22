@@ -1,10 +1,22 @@
 {
   "name": "electron-share",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "deeprado <2746143402@qq.com>",
   "description": "An electron-vue project",
+  "homepage": "https://github.com/",
   "license": "MIT",
   "main": "./dist/electron/main.js",
+  "keywords": [
+    "electron",
+    "vue"
+  ],
+  "repository": {
+    "type": "https",
+    "url": "https://github.com/deeprado/electron-share.git"
+  },
+  "bugs": {
+    "url": "https://github.com/deeprado/electron-share/issues"
+  },
   "scripts": {
     "start": "npm run dev",
     "build": "node .electron-vue/build.js && electron-builder",
@@ -48,7 +60,7 @@
       "target": [
         "nsis"
       ],
-      "legalTrademarks": "https://hlykf.huolieyun.com/",
+      "legalTrademarks": "https://github.com",
       "verifyUpdateCodeSignature": false
     },
     "linux": {
