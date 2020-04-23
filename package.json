@@ -1,6 +1,6 @@
 {
   "name": "electron-share",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "deeprado <2746143402@qq.com>",
   "description": "An electron-vue project",
   "homepage": "https://github.com/",
@@ -33,7 +33,7 @@
     "test": "npm run unit && npm run e2e",
     "unit": "karma start test/unit/karma.conf.js",
     "postinstall": "electron-builder install-app-deps",
-    "publish": "electron-builder --publish always"
+    "publish": "electron-builder --publish onTagOrDraft"
   },
   "build": {
     "productName": "electron-share",
@@ -45,6 +45,9 @@
     "files": [
       "dist/electron/**/*"
     ],
+    "publish": [{
+      "provider": "github"
+    }],
     "mac": {
       "category": "public.app-category.business",
       "icon": "build/icons/icon.icns",
