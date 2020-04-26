@@ -1,4 +1,6 @@
 import { app, BrowserWindow } from 'electron'
+import pkg from '../../package.json'
+
 const electron = require('electron')
 
 /**
@@ -78,6 +80,10 @@ function createWindow () {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
+}
+
+if (process.platform === 'win32') {
+  app.setAppUserModelId(pkg.build.appId)
 }
 
 app.on('ready', createWindow)
