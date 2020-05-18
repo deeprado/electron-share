@@ -1,6 +1,6 @@
 {
   "name": "electron-share",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "deeprado <2746143402@qq.com>",
   "description": "An electron-vue project",
   "homepage": "https://github.com/",
@@ -40,7 +40,7 @@
     "appId": "org.simulatedgreg.electron-vue",
     "artifactName": "${productName}-${version}.${ext}",
     "directories": {
-      "output": "production"
+      "output": "build"
     },
     "files": [
       "dist/electron/**/*"
