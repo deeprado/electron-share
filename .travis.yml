@@ -5,9 +5,9 @@ sudo: required
 dist: trusty
 language: c
 
-env:
-  global:
-    - secure: "iFC59q1FI/N0PmTqPk1zDMXIfj8bsblIL0XUQLwA4uc+q56ejj2WvWaYPPNLRlILWGXTkDvyfXzin41rQ7VkXRJz7R050IvuvljmPS8Ove12CLzv/a2WG49CJQsUB5OZAZAkDvDfQhnsP8eTdrZsPOh25Zbv7yLxECPIbW55dJC8tsBq6PAXy91LsQsue+HNc5xcLLXzFgby5oR6XQ8Hs9rTY13ZZeEEf3p4aKYrmepnTp9evXKIfLzMSatC5HfJ+l6BLH5Xta6Ob4vsnIbgU8JyR2+B/pWUhExO9bbycaMCBLlBcf08FSEuITa3J1JaNQLFh/hvd596k3CkmA64WTZCP2QwHevD94bbyp91Q3BlZNldDJf29CeaEC/ncpft2vY4lEIJhuPaZ0+FBtpFNnOKFETU/FtYkxlO0Tqjab2jrzFqyJWLI0K6gtJYH6QCMDclJYY7QOv1WLEFFmZjpDpijRxUqDhg0H9XeUQc1PtEr98xF0JR5aKAsz/C0ChaeZNSKC6ePOrZZ/cg+rh3Skw0Mw1SGx3bp9v6WRKHjlHYEpqcVxV0SMFQ78oNLpTwBJPNlNXpwED/Jv520tOTBnedgrdpy5FBY6Z7P9JujB7LL+/XPOGDJaKfkMBAMGuDeh6ss0iHuOiiWmd6rXnWO0qYiQCDeTOAmsvmM7JHOZg="
+# env:
+#   global:
+#     - secure: "iFC59q1FI/N0PmTqPk1zDMXIfj8bsblIL0XUQLwA4uc+q56ejj2WvWaYPPNLRlILWGXTkDvyfXzin41rQ7VkXRJz7R050IvuvljmPS8Ove12CLzv/a2WG49CJQsUB5OZAZAkDvDfQhnsP8eTdrZsPOh25Zbv7yLxECPIbW55dJC8tsBq6PAXy91LsQsue+HNc5xcLLXzFgby5oR6XQ8Hs9rTY13ZZeEEf3p4aKYrmepnTp9evXKIfLzMSatC5HfJ+l6BLH5Xta6Ob4vsnIbgU8JyR2+B/pWUhExO9bbycaMCBLlBcf08FSEuITa3J1JaNQLFh/hvd596k3CkmA64WTZCP2QwHevD94bbyp91Q3BlZNldDJf29CeaEC/ncpft2vY4lEIJhuPaZ0+FBtpFNnOKFETU/FtYkxlO0Tqjab2jrzFqyJWLI0K6gtJYH6QCMDclJYY7QOv1WLEFFmZjpDpijRxUqDhg0H9XeUQc1PtEr98xF0JR5aKAsz/C0ChaeZNSKC6ePOrZZ/cg+rh3Skw0Mw1SGx3bp9v6WRKHjlHYEpqcVxV0SMFQ78oNLpTwBJPNlNXpwED/Jv520tOTBnedgrdpy5FBY6Z7P9JujB7LL+/XPOGDJaKfkMBAMGuDeh6ss0iHuOiiWmd6rXnWO0qYiQCDeTOAmsvmM7JHOZg="
 
 matrix:
   include:
@@ -27,6 +27,7 @@ addons:
     - icnsutils
     #- xvfb
 before_install:
+- npm config set registry http://registry.npmjs.org
 - brew install git-lfs
 - mkdir -p /tmp/git-lfs && curl -L https://github.com/github/git-lfs/releases/download/v1.2.1/git-lfs-$([
     "$TRAVIS_OS_NAME" == "linux" ] && echo "linux" || echo "darwin")-amd64-1.2.1.tar.gz
