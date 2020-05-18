@@ -14,3 +14,5 @@ thumbs.db
 yarn.lock
 package-lock.json
 
+production/*
+!production/.gitignore
